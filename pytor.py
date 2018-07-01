@@ -1,14 +1,12 @@
-#	PYTOR
-#	Lightweight wrapper for web scraping on the Tor network
-#	Brad Heath, brad.heath@gmail.com, @bradheath
+#	pytor - Lightweight wrapper for web scraping on the Tor network
+#		Fork maintained by codsane: github.com/codsane
+#   	Project originally by Brad Heath: brad.heath@gmail.com / @bradheath
 #
-# 	REQUIREMENTS
-#	- Functioning (and active) TOR proxy
-#	- SocksiPy (socks.py installed to lib/site-packages)
-#	- Stem (pip install stem)
-#	- Mechanize
-#
-#
+# 	Requirements
+#	- Active instance of Tor
+#	- PySocks
+#	- Stem
+#	- Mechanize (soon to be replaced by a working 3.6 emulator)
 
 import stem
 from stem.control import Controller
@@ -68,7 +66,7 @@ class pytor:
 			return False
 
 	def ip(self):
-		self._ip = self.get('http://bradheath.org/ip')
+		self._ip = self.get('http://httpbin.org/ip')
 		return self._ip
 
 	def timeForNew(self):
